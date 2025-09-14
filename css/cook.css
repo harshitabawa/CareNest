@@ -283,9 +283,11 @@ h1, h2, h3, h4 {
 }
 
 /* ---------------- PRICING SECTION ---------------- */
+
 .pricing-section {
   text-align: center;
-  margin-bottom: 150px;
+  padding: 100px 60px;
+  background: #fff8f3;
 }
 
 .pricing-section span {
@@ -303,21 +305,20 @@ h1, h2, h3, h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 90px;
+  gap: 40px;
 }
 
 .pricing-card {
-  background: #ffffffd9;
+  background: #ffffff;
   border-radius: 14px;
   box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-  width: 220px;
+  width: 280px;
   padding: 20px;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
-  height: 400px;
 }
 
 .pricing-card:hover {
@@ -328,15 +329,15 @@ h1, h2, h3, h4 {
   font-size: 20px;
   font-weight: 700;
   color: #fff;
-  padding: 16px;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
+  background: #ff9306;
+  padding: 14px;
+  border-radius: 12px 12px 0 0;
   margin: -20px -20px 20px -20px;
   text-align: center;
 }
 
 .pricing-price {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: #f15d27;
   margin-bottom: 16px;
@@ -350,63 +351,50 @@ h1, h2, h3, h4 {
 }
 
 .pricing-card ul li {
-  margin-bottom: 10px;
-  padding-left: 25px;
+  margin-bottom: 12px;
+  padding-left: 20px;
   position: relative;
   color: #333;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .pricing-card ul li::before {
-  content: '✔';
+  content: "✔";
+  color: #1dca06;
+  font-weight: bold;
   position: absolute;
   left: 0;
-  color: green;
-  font-size: 14px;
 }
 
 .select-btn {
-  background-color: #ff6b35;
-  color: white;
+  background: #ff9306;
   border: none;
-  padding: 10px 18px;
+  color: white;
+  padding: 12px;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
-  align-self: center;
+  transition: background 0.3s;
+  text-transform: uppercase;
 }
 
 .select-btn:hover {
-  background-color: #FF4500;
+  background: #e67e00;
 }
 
-.pricing-card.hourly .pricing-header {
-  background: #f44336;
-}
-
-.pricing-card.daily .pricing-header {
-  background: #ff9800;
-}
-
-.pricing-card.monthly .pricing-header {
-  background: #2196f3;
-}
-
-.pricing-card .tag {
+.tag {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  background: #ff9306;
+  top: -12px;         
+  right: -15px;
+  background: #f15d27;
   color: white;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 4px;
-  transform: rotate(15deg);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transform: rotate(30deg); 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
-
 
 .hidden {
   opacity: 0;

@@ -283,6 +283,7 @@ h1, h2, h3, h4 {
 }
 
 /* ---------------- PRICING ---------------- */
+
 .pricing-section {
   text-align: center;
   padding: 100px 60px;
@@ -359,7 +360,7 @@ h1, h2, h3, h4 {
 
 .pricing-card ul li::before {
   content: "✔";
-  color: #ff9306;
+  color: #1dca06;
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -384,13 +385,14 @@ h1, h2, h3, h4 {
 .tag {
   position: absolute;
   top: -12px;         
-  right: 20px;
+  right: -15px;
   background: #f15d27;
   color: white;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   padding: 6px 12px;
   border-radius: 20px;
+  transform: rotate(30deg); 
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
