@@ -10,16 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
   
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="logo">CareNest</div>
   <ul class="nav-links">
-    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="about.html">About</a></li>
-     <li class="dropdown">
+    <li class="dropdown">
       <a href="services.html">Services ▾</a>
       <ul class="dropdown-menu">
         <li><a href="services.html">All Services</a></li>
@@ -37,8 +36,6 @@
   </ul>
 </nav>
 
- <!-- CONTACT-->
-  
 <section class="contact-section" id="contact">
   <div class="container">
     <h2>Get In <span>Touch</span></h2>
@@ -47,9 +44,9 @@
     <div class="contact-wrapper">
       <!-- Contact Form -->
       <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit" class="submit-btn">Send Message</button>
       </form>
 
@@ -79,6 +76,39 @@
     </div>
   </div>
 </section>
+
+<!-- Script to handle form submission -->
+<script>
+const form = document.querySelector('.contact-form');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  if (!name || !email || !message) {
+    alert('Please fill all fields');
+    return;
+  }
+
+  try {
+    const res = await fetch('http://localhost:5000/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    const data = await res.json();
+    alert(data.msg);
+    form.reset();
+  } catch (err) {
+    console.error(err);
+    alert('Failed to send message. Please try again.');
+  }
+});
+</script>
 
 </body>
 </html>
